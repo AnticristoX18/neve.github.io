@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Névé: Arte Helado</title>
+<meta name="description" content="Névé: Arte Helado — aguas frescas hechas para disfrutarse.">
+<meta name="theme-color" content="#FFF9F6">
+<meta name="format-detection" content="telephone=no">
+<meta property="og:title" content="Névé: Arte Helado">
+<meta property="og:description" content="Aguas frescas hechas para disfrutarse — un concepto que convierte el sabor en una experiencia visual.">
+<meta property="og:type" content="website">
+<style>
+:root{--green:#C7E8E3;--pink:#FFD1E7;--cream:#FFF9F6;--ink:#263332;--muted:#65716F;--white:#fff;--darkgreen:#6D9F99;--shadow:0 18px 50px rgba(38,51,50,.10);--radius:28px}
+*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}body{font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;color:var(--ink);background:var(--cream);line-height:1.5;overflow-x:hidden}a{text-decoration:none;color:inherit}button{font:inherit}
+header{position:fixed;top:0;left:0;width:100%;z-index:20;padding:calc(16px + env(safe-area-inset-top)) 5% 16px;transition:.3s}header.scrolled{background:rgba(255,249,246,.9);backdrop-filter:blur(18px);box-shadow:0 8px 30px rgba(38,51,50,.07)}
+nav{max-width:1180px;margin:auto;display:flex;align-items:center;justify-content:space-between;position:relative}
+.nav-right{display:flex;align-items:center;gap:12px}
+.menu-toggle{display:none;flex-direction:column;justify-content:center;align-items:center;gap:5px;width:46px;height:46px;border:0;border-radius:50%;background:white;box-shadow:var(--shadow);cursor:pointer;flex-shrink:0}
+.menu-toggle span{display:block;width:18px;height:2px;background:var(--ink);transition:.25s}
+.menu-toggle.active span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.menu-toggle.active span:nth-child(2){opacity:0}
+.menu-toggle.active span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+a:focus-visible,button:focus-visible{outline:3px solid var(--darkgreen);outline-offset:3px;border-radius:8px}.logo{font-weight:900;font-size:1.3rem;letter-spacing:-.04em}.logo span{display:block;font-size:.58rem;letter-spacing:.16em;text-transform:uppercase;color:var(--darkgreen)}
+.navlinks{display:flex;gap:30px;font-size:.9rem;font-weight:800}.navlinks a:hover{color:var(--darkgreen)}.nav-cta,.whatsapp{background:var(--ink);color:white;border:0;border-radius:999px;padding:13px 20px;font-weight:800;cursor:pointer;transition:.25s}.nav-cta:hover,.whatsapp:hover{transform:translateY(-3px)}
+.hero{min-height:100vh;min-height:100dvh;padding:145px 5% 70px;display:grid;place-items:center;position:relative}.hero-inner{max-width:1180px;width:100%;display:grid;grid-template-columns:1fr 1fr;gap:55px;align-items:center}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;background:white;padding:9px 15px;border-radius:999px;font-size:.76rem;font-weight:900;letter-spacing:.08em;text-transform:uppercase;box-shadow:var(--shadow);margin-bottom:20px}.dot{width:9px;height:9px;border-radius:50%;background:#E99BBD}
+h1{font-size:clamp(3.1rem,7vw,6.4rem);line-height:.88;letter-spacing:-.075em;max-width:650px}h1 em{font-style:normal;color:#78AFAA}.hero p{max-width:540px;color:var(--muted);font-size:1.08rem;margin:25px 0 30px}
+.actions{display:flex;gap:13px;flex-wrap:wrap}.primary,.secondary{padding:15px 22px;border-radius:999px;font-weight:900;display:inline-flex;align-items:center;gap:9px;transition:.25s}.primary{background:var(--ink);color:white}.secondary{background:white;border:1px solid #ece7e4}.primary:hover,.secondary:hover{transform:translateY(-3px);box-shadow:var(--shadow)}
+.hero-art{min-height:520px;position:relative;display:grid;place-items:center}.cup{width:245px;height:335px;border-radius:30px 30px 55px 55px;background:linear-gradient(145deg,#fff,#edf8f6);border:5px solid rgba(255,255,255,.85);box-shadow:0 35px 70px rgba(71,115,110,.18);position:relative;transform:rotate(5deg);animation:float 5s ease-in-out infinite}
+.cup:before{content:"NÉVÉ";position:absolute;left:28px;right:28px;top:105px;padding:20px 8px;text-align:center;font-size:2rem;font-weight:1000;letter-spacing:-.08em;border-top:2px solid #b8dcd7;border-bottom:2px solid #b8dcd7}.cup:after{content:"ARTE HELADO";position:absolute;left:0;right:0;top:170px;text-align:center;font-size:.63rem;letter-spacing:.18em;font-weight:900;color:var(--darkgreen)}
+.straw{position:absolute;width:22px;height:180px;background:var(--pink);border-radius:20px;top:-110px;right:58px;transform:rotate(17deg);box-shadow:inset 0 0 0 4px rgba(255,255,255,.4)}.ice{position:absolute;width:70px;height:70px;border-radius:18px;background:rgba(255,255,255,.55);box-shadow:inset 0 0 20px rgba(255,255,255,.7)}.ice.i1{left:70px;top:55px;transform:rotate(20deg)}.ice.i2{right:45px;top:225px;transform:rotate(-15deg)}
+.spark{position:absolute;font-size:2rem;animation:twinkle 2.5s infinite}.s1{top:75px;left:18%}.s2{right:8%;top:28%}.s3{bottom:12%;left:15%}
+@keyframes float{50%{transform:translateY(-18px) rotate(2deg)}}@keyframes twinkle{50%{transform:scale(1.25) rotate(12deg);opacity:.55}}
+section{padding:100px 5%;position:relative}.section-inner{max-width:1180px;margin:auto}.section-head{display:flex;justify-content:space-between;gap:30px;align-items:end;margin-bottom:35px}.section-head h2{font-size:clamp(2.2rem,5vw,4rem);line-height:.95;letter-spacing:-.06em}.section-head p{max-width:430px;color:var(--muted)}
+/* MOBILE-FIRST BEBIDAS: una tarjeta a la vez, carrusel táctil */
+.drinks-section{background:#fffdfb}.drinks-top{align-items:center}.drink-count{font-size:.8rem;font-weight:900;color:var(--darkgreen);white-space:nowrap}
+.drinks-carousel{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;padding:8px 2px 24px;touch-action:pan-x}.drinks-carousel::-webkit-scrollbar{display:none}
+.drink-card{flex:0 0 280px;height:360px;border-radius:32px;padding:25px;scroll-snap-align:start;position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end;box-shadow:var(--shadow);transition:.3s}
+.drink-card:nth-child(4n+1){background:var(--green)}.drink-card:nth-child(4n+2){background:var(--pink)}.drink-card:nth-child(4n+3){background:#E9E0F6}.drink-card:nth-child(4n){background:#F9E6C8}
+.drink-card .number{position:absolute;top:18px;left:20px;font-size:.72rem;font-weight:900;letter-spacing:.12em;opacity:.55}.drink-emoji{position:absolute;top:38px;right:22px;font-size:7rem;filter:drop-shadow(0 15px 12px rgba(0,0,0,.09));transition:.35s}.drink-card:hover .drink-emoji{transform:rotate(7deg) scale(1.06)}
+.drink-card h3{font-size:2rem;letter-spacing:-.05em}.drink-card p{font-size:.88rem;color:#56615f;margin-top:4px}.drink-tag{margin-top:15px;display:inline-flex;width:max-content;padding:7px 11px;border-radius:999px;background:rgba(255,255,255,.55);font-size:.7rem;font-weight:900}
+.drink-controls{display:flex;justify-content:space-between;align-items:center;margin-top:12px}.progress{height:5px;border-radius:9px;background:#eee7e4;flex:1;margin-right:15px;overflow:hidden}.progress i{display:block;height:100%;width:12.5%;background:var(--ink);border-radius:9px;transition:.3s}.arrows{display:flex;gap:8px}.arrow{width:46px;height:46px;border:0;border-radius:50%;background:white;box-shadow:var(--shadow);cursor:pointer}
+.carousel-wrap{position:relative}.carousel{display:flex;gap:20px;overflow:auto;scroll-snap-type:x mandatory;scrollbar-width:none;padding:8px 3px 20px}.carousel::-webkit-scrollbar{display:none}.slide{min-width:calc(50% - 10px);height:310px;border-radius:var(--radius);padding:30px;scroll-snap-align:start;display:flex;flex-direction:column;justify-content:space-between;box-shadow:var(--shadow)}.slide:nth-child(odd){background:var(--pink)}.slide:nth-child(even){background:var(--green)}.slide small{font-weight:900;text-transform:uppercase;letter-spacing:.12em;opacity:.65}.slide strong{font-size:2.4rem;line-height:1;letter-spacing:-.05em;max-width:330px}.slide span{font-weight:700;opacity:.75}
+.story{display:grid;grid-template-columns:1fr 1fr;gap:25px;align-items:stretch}.story-card{padding:45px;border-radius:var(--radius);background:var(--ink);color:white;min-height:390px}.story-card h2{font-size:3rem;line-height:.95;letter-spacing:-.06em;margin:18px 0}.story-card p{color:#d5e2df;max-width:470px}.manifesto{background:var(--green);color:var(--ink);display:flex;align-items:center;justify-content:center;text-align:center}.manifesto h3{font-size:2.4rem;line-height:1.05;letter-spacing:-.05em}
+.cta{padding-top:50px;padding-bottom:110px}.cta-box{background:var(--pink);border-radius:36px;padding:65px;display:flex;align-items:center;justify-content:space-between;gap:35px}.cta-box h2{font-size:clamp(2.5rem,5vw,4.5rem);line-height:.9;letter-spacing:-.06em;max-width:650px}.cta-box p{margin-top:15px;color:#5d5659}
+footer{padding:35px 5%;border-top:1px solid #eee5e1;color:var(--muted)}.footer-inner{max-width:1180px;margin:auto;display:flex;justify-content:space-between;gap:20px}.reveal{opacity:0;transform:translateY(25px);transition:.7s}.reveal.visible{opacity:1;transform:none}
+@media(min-width:700px){.drink-card{flex-basis:calc(50% - 8px)}}
+@media(min-width:1000px){.drink-card{flex-basis:calc(25% - 12px)}.drinks-carousel{overflow:visible;flex-wrap:wrap}.drink-controls{display:none}}
+@media(max-width:850px){.menu-toggle{display:flex}.navlinks{position:absolute;top:calc(100% + 12px);left:0;right:0;flex-direction:column;gap:2px;background:var(--white);border-radius:20px;box-shadow:var(--shadow);padding:10px;max-height:0;opacity:0;pointer-events:none;overflow:hidden;transition:.3s}.navlinks.open{max-height:260px;opacity:1;pointer-events:auto}.navlinks a{padding:14px 16px;border-radius:12px;font-size:1rem}.navlinks a:hover,.navlinks a:focus-visible{background:var(--cream)}.hero-inner,.story{grid-template-columns:1fr}.hero{padding-top:125px}.hero-art{min-height:390px}.slide{min-width:85%}.cta-box{padding:40px;display:block}.cta-box .whatsapp{margin-top:25px}}
+@media(max-width:520px){.hero{padding-left:20px;padding-right:20px}.hero-art{min-height:350px}.cup{transform:scale(.82) rotate(5deg)}section{padding:75px 20px}.drink-card{flex-basis:calc(100vw - 45px);height:380px}.section-head{display:block}.section-head p{margin-top:16px}.footer-inner{display:block}.footer-inner p{margin-top:8px}.nav-cta{padding:11px 16px}.hero p{font-size:1rem}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<header id="header"><nav><a class="logo" href="#">NÉVÉ<span>ARTE HELADO</span></a><div class="navlinks" id="navLinks"><a href="#sabores">Sabores</a><a href="#concepto">Concepto</a><a href="#experiencia">Experiencia</a></div><div class="nav-right"><a class="nav-cta" href="#contacto">Pedir ahora</a><button class="menu-toggle" id="menuToggle" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="navLinks"><span></span><span></span><span></span></button></div></nav></header>
+
+<main>
+<section class="hero"><div class="hero-inner"><div class="reveal"><div class="eyebrow"><i class="dot"></i> Aguas frescas · hechas con intención</div><h1>El sabor también puede ser <em>arte.</em></h1><p>Bienvenido a Névé: un concepto que convierte las aguas frescas en una experiencia visual, refrescante y diferente.</p><div class="actions"><a class="primary" href="#sabores">Ver sabores ↓</a><a class="secondary" href="#contacto">Hablar por WhatsApp</a></div></div><div class="hero-art reveal"><div class="spark s1">✦</div><div class="spark s2">✧</div><div class="spark s3">✦</div><div class="cup"><div class="straw"></div><div class="ice i1"></div><div class="ice i2"></div></div></div></div></section>
+
+<section id="sabores" class="drinks-section"><div class="section-inner"><div class="section-head drinks-top reveal"><div><h2>8 formas de<br>refrescarte.</h2><p style="margin-top:15px">Conoce las bebidas frescas de Névé. En celular puedes deslizar con el dedo; en computadora usa las flechas.</p></div><div class="drink-count">8 / 8 · SABORES</div></div>
+<div class="drinks-carousel" id="drinksCarousel">
+<article class="drink-card"><span class="number">01 / 08</span><span class="drink-emoji">🥛</span><h3>Horchata</h3><p>Cremosa, dulce y clásica.</p><span class="drink-tag">CLÁSICA</span></article>
+<article class="drink-card"><span class="number">02 / 08</span><span class="drink-emoji">🧋</span><h3>Taro</h3><p>Suave, diferente y con personalidad.</p><span class="drink-tag">ESPECIAL</span></article>
+<article class="drink-card"><span class="number">03 / 08</span><span class="drink-emoji">🥜</span><h3>Nuez</h3><p>Un sabor cremoso y reconfortante.</p><span class="drink-tag">ESPECIAL</span></article>
+<article class="drink-card"><span class="number">04 / 08</span><span class="drink-emoji">🍋</span><h3>Limón</h3><p>Ácido, ligero y muy refrescante.</p><span class="drink-tag">REFRESCANTE</span></article>
+<article class="drink-card"><span class="number">05 / 08</span><span class="drink-emoji">🌰</span><h3>Pistache</h3><p>Elegante, cremoso y diferente.</p><span class="drink-tag">ESPECIAL</span></article>
+<article class="drink-card"><span class="number">06 / 08</span><span class="drink-emoji">🌺</span><h3>Jamaica</h3><p>Color, acidez y un clásico favorito.</p><span class="drink-tag">CLÁSICA</span></article>
+<article class="drink-card"><span class="number">07 / 08</span><span class="drink-emoji">☕</span><h3>Café</h3><p>Intenso, suave y con carácter.</p><span class="drink-tag">ESPECIAL</span></article>
+<article class="drink-card"><span class="number">08 / 08</span><span class="drink-emoji">🍍</span><h3>Piña</h3><p>Tropical, dulce y fresca.</p><span class="drink-tag">TROPICAL</span></article>
+</div>
+<div class="drink-controls"><div class="progress"><i id="drinkProgress"></i></div><div class="arrows"><button class="arrow" id="drinkPrev" type="button" aria-label="Bebida anterior">←</button><button class="arrow" id="drinkNext" type="button" aria-label="Siguiente bebida">→</button></div></div>
+</div></section>
+
+<section id="experiencia"><div class="section-inner"><div class="section-head reveal"><h2>Una idea que<br>no se queda quieta.</h2><p>Desliza para conocer el universo de Névé.</p></div><div class="carousel-wrap"><div class="carousel" id="carousel"><article class="slide"><small>01 · Sabor</small><strong>Fresco de verdad.</strong><span>Cada vaso se siente como una pausa para disfrutar.</span></article><article class="slide"><small>02 · Diseño</small><strong>Lo cotidiano, diferente.</strong><span>Colores, formas y detalles que hacen reconocible a Névé.</span></article><article class="slide"><small>03 · Futuro</small><strong>Esto apenas comienza.</strong><span>El concepto está pensado para crecer hacia nuevos productos y experiencias.</span></article><article class="slide"><small>04 · Comunidad</small><strong>Comparte el momento.</strong><span>Un producto que también quiere formar parte de tus reuniones y recuerdos.</span></article></div><div class="carousel-controls"><button class="arrow" id="prev" type="button" aria-label="Anterior">←</button><button class="arrow" id="next" type="button" aria-label="Siguiente">→</button></div></div></div></section>
+
+<section id="concepto"><div class="section-inner story"><div class="story-card reveal"><small>EL CONCEPTO</small><h2>Névé no es solo una bebida.</h2><p>Es una identidad construida alrededor de lo fresco, lo visual y lo inesperado. La intención es empezar con aguas frescas y construir una marca capaz de evolucionar.</p></div><div class="story-card manifesto reveal"><div><div style="font-size:3rem">❄️</div><h3>Refrescar.<br>Crear.<br>Repetir.</h3></div></div></div></section>
+
+<section class="cta" id="contacto"><div class="section-inner"><div class="cta-box reveal"><div><h2>¿Se te antojó?</h2><p>Escríbenos y pregunta por los sabores disponibles.</p></div><a class="whatsapp" id="whatsappBtn" target="_blank" rel="noopener">💬 Pedir por WhatsApp</a></div></div></section>
+</main>
+
+<footer><div class="footer-inner"><strong>NÉVÉ: ARTE HELADO</strong><p>© 2026 Névé. Sabor que se disfruta.</p></div></footer>
+
+<script>
+const WHATSAPP_NUMBER="521XXXXXXXXXX";
+const msg=encodeURIComponent("¡Hola! Me interesa conocer los sabores disponibles de Névé: Arte Helado.");
+document.getElementById("whatsappBtn").href=`https://wa.me/${WHATSAPP_NUMBER}?text=${msg}`;
+
+const header=document.getElementById("header");
+window.addEventListener("scroll",()=>header.classList.toggle("scrolled",window.scrollY>30),{passive:true});
+
+const menuToggle=document.getElementById("menuToggle"), navLinks=document.getElementById("navLinks");
+function closeMenu(){navLinks.classList.remove("open");menuToggle.classList.remove("active");menuToggle.setAttribute("aria-expanded","false")}
+menuToggle.addEventListener("click",()=>{const open=navLinks.classList.toggle("open");menuToggle.classList.toggle("active",open);menuToggle.setAttribute("aria-expanded",String(open))});
+navLinks.querySelectorAll("a").forEach(a=>a.addEventListener("click",closeMenu));
+document.addEventListener("click",e=>{if(navLinks.classList.contains("open")&&!e.target.closest("nav"))closeMenu()});
+
+const observer=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add("visible")}),{threshold:.12});
+document.querySelectorAll(".reveal").forEach(el=>observer.observe(el));
+
+const drinks=document.getElementById("drinksCarousel"), progress=document.getElementById("drinkProgress");
+function moveDrinks(dir){drinks.scrollBy({left:dir*Math.min(drinks.clientWidth*.88,310),behavior:"smooth"})}
+document.getElementById("drinkPrev").addEventListener("click",()=>moveDrinks(-1));
+document.getElementById("drinkNext").addEventListener("click",()=>moveDrinks(1));
+function updateProgress(){const max=drinks.scrollWidth-drinks.clientWidth;progress.style.width=(max<=0?100:Math.max(12.5,Math.min(100,(drinks.scrollLeft/max)*87.5+12.5)))+"%"}
+drinks.addEventListener("scroll",updateProgress,{passive:true});updateProgress();
+
+const carousel=document.getElementById("carousel");
+document.getElementById("prev").addEventListener("click",()=>carousel.scrollBy({left:-carousel.clientWidth*.65,behavior:"smooth"}));
+document.getElementById("next").addEventListener("click",()=>carousel.scrollBy({left:carousel.clientWidth*.65,behavior:"smooth"}));
+</script>
+</body>
+</html>
